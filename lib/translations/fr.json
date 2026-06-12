@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "skills": "Compétences",
+    "experience": "Expérience",
+    "education": "Formation",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Créer des expériences",
+    "titleAccent": "numériques remarquables",
+    "subtitle": "Développeur full-stack passionné par la création d'applications web belles et performantes",
+    "cta": "Découvrir Mon Travail",
+    "sceneHint": "Bougez la souris pour explorer le setup"
+  },
+  "about": {
+    "title": "À Propos de Moi",
+    "description": "Je suis un développeur créatif passionné par la résolution de problèmes complexes. Avec une expertise en technologies web modernes, je crée des applications qui sont non seulement fonctionnelles, mais aussi agréables à utiliser."
+  },
+  "skills": {
+    "title": "Compétences & Expertise",
+    "subtitle": "Technologieset outils avec lesquels je travaille",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "tools": "Outils & DevOps",
+      "design": "Design"
+    }
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "subtitle": "Mon parcours professionnel",
+    "current": "Actuellement"
+  },
+  "education": {
+    "title": "Formation",
+    "subtitle": "Mon parcours académique"
+  },
+  "projects": {
+    "title": "Projets Récents",
+    "subtitle": "Découvrez mes dernières créations",
+    "viewProject": "Voir le Projet",
+    "github": "GitHub"
+  },
+  "contact": {
+    "title": "Me Contacter",
+    "subtitle": "Créons quelque chose d'extraordinaire ensemble",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "message": "Votre Message",
+      "send": "Envoyer",
+      "success": "Message envoyé avec succès!",
+      "error": "Erreur lors de l'envoi du message"
+    }
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "subtitle": "Téléchargez mon CV professionnel",
+    "download": "Télécharger le CV",
+    "downloadPDF": "Télécharger en PDF",
+    "viewOnline": "Voir en ligne"
+  },
+  "footer": {
+    "copyright": "Tous droits réservés",
+    "madeWith": "Créé avec passion"
+  }
+}

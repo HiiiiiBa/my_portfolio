@@ -1,0 +1,24 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: light) {
+      .background { fill: #1a1a2e; }
+      .foreground { fill: #f5f0eb; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #f5f0eb; }
+      .foreground { fill: #1a1a2e; }
+    }
+  </style>
+  <rect class="background" width="180" height="180" rx="36" />
+  <text
+    x="90"
+    y="125"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="100"
+    font-weight="300"
+    font-style="italic"
+    class="foreground"
+    letter-spacing="-4"
+  >H</text>
+</svg>

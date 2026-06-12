@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 70" width="300" height="70">
+  <!-- Hiba -->
+  <text x="0" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="400" fill="currentColor" letter-spacing="-1">Hiba</text>
+  <!-- El - italic script style -->
+  <text x="118" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-style="italic" fill="currentColor" letter-spacing="-2">El</text>
+  <!-- Ouafi -->
+  <text x="154" y="52" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="400" fill="currentColor" letter-spacing="-1">Ouafi</text>
+</svg>
