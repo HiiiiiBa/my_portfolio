@@ -11,7 +11,7 @@ const educationFr = [
     year: '2024 – présent',
     logo: '/education/ensiasd.png',
     logoAlt: 'ENSIASD Taroudant',
-    logoClassName: 'h-[72px] w-auto max-w-full object-contain',
+    logoClassName: 'h-20 w-auto max-w-full object-contain',
   },
   {
     degree: 'DUT en Informatique Décisionnelle et Statistiques',
@@ -20,7 +20,7 @@ const educationFr = [
     year: '2022 – 2024',
     logo: '/education/est-fkih-ben-salah.png',
     logoAlt: 'EST Fkih Ben Salah',
-    logoClassName: 'h-24 w-auto max-w-full object-contain',
+    logoClassName: 'h-20 w-auto max-w-full object-contain',
   },
   {
     degree: 'Baccalauréat en Sciences Math B',
@@ -38,7 +38,7 @@ const educationEn = [
     year: '2024 – present',
     logo: '/education/ensiasd.png',
     logoAlt: 'ENSIASD Taroudant',
-    logoClassName: 'h-[72px] w-auto max-w-full object-contain',
+    logoClassName: 'h-20 w-auto max-w-full object-contain',
   },
   {
     degree: 'University Diploma in Decisional IT and Statistics',
@@ -47,7 +47,7 @@ const educationEn = [
     year: '2022 – 2024',
     logo: '/education/est-fkih-ben-salah.png',
     logoAlt: 'EST Fkih Ben Salah',
-    logoClassName: 'h-24 w-auto max-w-full object-contain',
+    logoClassName: 'h-20 w-auto max-w-full object-contain',
   },
   {
     degree: 'Baccalaureate in Math Sciences B',
