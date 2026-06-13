@@ -93,29 +93,8 @@ export function Contact() {
                 )
               })}
             </div>
-
-            {/* Social Links */}
-            <div>
-              <h3 className="font-semibold mb-4">Follow Me</h3>
-              <div className="flex gap-4">
-                {[
-                  { name: 'GitHub', url: 'https://github.com' },
-                  { name: 'LinkedIn', url: 'https://linkedin.com' },
-                  { name: 'Twitter', url: 'https://twitter.com' }
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    className="p-3 bg-card border border-border rounded-lg hover:border-accent hover:bg-muted transition-all duration-300"
-                    title={social.name}
-                  >
-                    <span className="sr-only">{social.name}</span>
-                    <div className="w-6 h-6" />
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
+
 
           {/* Contact Form */}
           <div>
