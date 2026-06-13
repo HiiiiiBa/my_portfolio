@@ -20,7 +20,7 @@ const educationFr = [
     year: '2022 – 2024',
     logo: '/education/est-fkih-ben-salah.png',
     logoAlt: 'EST Fkih Ben Salah',
-    logoClassName: 'h-28 w-auto max-w-[130px] object-contain',
+    logoClassName: 'h-[72px] w-auto max-w-full object-contain',
   },
   {
     degree: 'Baccalauréat en Sciences Math B',
@@ -47,7 +47,7 @@ const educationEn = [
     year: '2022 – 2024',
     logo: '/education/est-fkih-ben-salah.png',
     logoAlt: 'EST Fkih Ben Salah',
-    logoClassName: 'h-28 w-auto max-w-[130px] object-contain',
+    logoClassName: 'h-[72px] w-auto max-w-full object-contain',
   },
   {
     degree: 'Baccalaureate in Math Sciences B',
