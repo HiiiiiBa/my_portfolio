@@ -30,7 +30,7 @@ export function Footer() {
         {/* Social Icons */}
         <div className="flex items-center gap-1">
           <a
-            href="https://github.com"
+            href="https://github.com/HiiiiiBa"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -39,7 +39,7 @@ export function Footer() {
             <GitHubIcon />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/hiba-el-ouafi04/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
