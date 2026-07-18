@@ -4,7 +4,7 @@ import { Award } from 'lucide-react'
 interface EducationCardProps {
   degree: string
   school: string
-  field: string
+  field?: string
   year: string
   description?: string
   logo?: string
@@ -25,7 +25,7 @@ export function EducationCard({
   return (
     <div className="rounded-xl bg-card border border-border hover:border-accent/40 transition-colors overflow-hidden h-full flex flex-col">
       {logo ? (
-        <div className="bg-zinc-50 px-5 py-6 flex items-center justify-center min-h-[112px] border-b border-border/40">
+        <div className="bg-zinc-50 px-5 py-6 flex items-center justify-center min-h-[112px] border-b border-border/40 overflow-hidden">
           <Image
             src={logo}
             alt={logoAlt ?? school}
@@ -52,7 +52,9 @@ export function EducationCard({
           <div className="min-w-0 flex-1">
             <h3 className="font-semibold text-base leading-snug mb-1.5">{degree}</h3>
             <p className="text-accent text-sm font-medium mb-1">{school}</p>
-            <p className="text-muted-foreground text-sm mb-2">{field}</p>
+            {field && (
+              <p className="text-muted-foreground text-sm mb-2">{field}</p>
+            )}
             <span className="inline-block px-2.5 py-0.5 bg-accent/10 text-accent text-xs font-medium rounded-full">
               {year}
             </span>

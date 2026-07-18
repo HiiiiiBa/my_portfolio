@@ -9,15 +9,28 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Create Remarkable",
-    "titleAccent": "Digital Experiences",
-    "subtitle": "Full-stack developer passionate about building beautiful and performant web applications",
+    "title": "Software Engineering Student",
+    "titleAccent": "Backend • Full-Stack • DevOps • Cloud • AI",
+    "subtitle": "I build high-performance, scalable web applications—from architecture design through deployment—with a strong focus on code quality, security, and development best practices.",
     "cta": "View My Work",
     "sceneHint": "Move your mouse to explore the setup"
   },
   "about": {
     "title": "About Me",
-    "description": "I'm a creative developer with a passion for crafting elegant solutions to complex problems. With expertise in modern web technologies, I create applications that are not only functional but also delightful to use."
+    "description": "I am a Software Engineering student, passionate about building modern web applications and exploring new technologies. I enjoy designing reliable, high-performance, and scalable solutions, with a strong focus on code quality, software architecture, and development best practices.",
+    "description2": "Through my internships and projects, I have gained experience in Full-Stack development, DevOps, Cloud, and Artificial Intelligence, which allows me to approach problems from multiple perspectives.",
+    "fullstack": {
+      "label": "Full-Stack Development",
+      "description": "Design and development of modern web applications with a variety of technologies, applying software architecture and development best practices."
+    },
+    "devops": {
+      "label": "DevOps & Deployment",
+      "description": "Using Docker, CI/CD, and cloud services to automate and deploy applications."
+    },
+    "collaboration": {
+      "label": "Collaboration & Soft Skills",
+      "description": "Teamwork, problem-solving, autonomy, and continuous learning in collaborative environments."
+    }
   },
   "skills": {
     "title": "Skills & Expertise",

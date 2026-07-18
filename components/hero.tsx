@@ -29,12 +29,15 @@ export function Hero() {
           {t('nav.home')}
         </p>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-balance leading-[1.1]">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance leading-[1.15]">
           {t('hero.title')}
-          <span className="block text-accent mt-1">{t('hero.titleAccent')}</span>
         </h1>
 
-        <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto text-pretty leading-relaxed">
+        <p className="text-base sm:text-lg md:text-xl font-medium text-accent tracking-wide">
+          {t('hero.titleAccent')}
+        </p>
+
+        <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
           {t('hero.subtitle')}
         </p>
 

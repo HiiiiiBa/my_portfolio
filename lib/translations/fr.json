@@ -9,15 +9,28 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Créer des expériences",
-    "titleAccent": "numériques remarquables",
-    "subtitle": "Développeur full-stack passionné par la création d'applications web belles et performantes",
+    "title": "Élève Ingénieur en Ingénierie Logicielle",
+    "titleAccent": "Backend • Full-Stack • DevOps • Cloud • IA",
+    "subtitle": "Je développe des applications web performantes et évolutives, de la conception de l'architecture jusqu'au déploiement, en mettant l'accent sur la qualité du code, la sécurité et les bonnes pratiques de développement.",
     "cta": "Découvrir Mon Travail",
     "sceneHint": "Bougez la souris pour explorer le setup"
   },
   "about": {
     "title": "À Propos de Moi",
-    "description": "Je suis un développeur créatif passionné par la résolution de problèmes complexes. Avec une expertise en technologies web modernes, je crée des applications qui sont non seulement fonctionnelles, mais aussi agréables à utiliser."
+    "description": "Je suis élève ingénieur en Ingénierie Logicielle, passionné par le développement d'applications web modernes et les nouvelles technologies. J'aime concevoir des solutions fiables, performantes et évolutives, en accordant une attention particulière à la qualité du code, à l'architecture logicielle et aux bonnes pratiques de développement.",
+    "description2": "Grâce à mes stages et à mes projets, j'ai acquis une expérience en développement Full-Stack, DevOps, Cloud ainsi qu'en Intelligence Artificielle, ce qui me permet d'aborder les problématiques sous différents angles.",
+    "fullstack": {
+      "label": "Développement Full-Stack",
+      "description": "Conception et développement d'applications web modernes avec des technologies variées, en appliquant les bonnes pratiques d'architecture et de développement logiciel."
+    },
+    "devops": {
+      "label": "DevOps & Déploiement",
+      "description": "Utilisation de Docker, CI/CD et services cloud pour automatiser et déployer des applications."
+    },
+    "collaboration": {
+      "label": "Collaboration & Soft Skills",
+      "description": "Travail en équipe, résolution de problèmes, autonomie et apprentissage continu dans des environnements collaboratifs."
+    }
   },
   "skills": {
     "title": "Compétences & Expertise",

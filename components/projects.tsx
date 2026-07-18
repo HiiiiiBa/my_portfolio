@@ -38,7 +38,7 @@ export function Projects() {
       ],
       tags: ['Python', 'CNN/LSTM', 'SVM/KNN', 'Word2Vec', 'TF-IDF', 'Streamlit'],
       color: 'from-violet-500/10 to-purple-500/5',
-      image: '/project-1.png',
+      image: '/sms-classification.png',
       liveUrl: 'https://sms-classifier.example.com',
       githubUrl: 'https://github.com/hiba/sms-spam-classifier',
     },
@@ -61,7 +61,7 @@ export function Projects() {
       ],
       tags: ['Laravel', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'MVC'],
       color: 'from-blue-500/10 to-cyan-500/5',
-      image: '/project-2.png',
+      image: '/academic-website-v2.png',
       liveUrl: 'https://academic-platform.example.com',
       githubUrl: 'https://github.com/hiba/academic-website',
     },
@@ -86,7 +86,7 @@ export function Projects() {
       ],
       tags: ['Next.js', 'FastAPI', 'CamemBERT', 'PostgreSQL', 'React', 'NLP'],
       color: 'from-rose-500/10 to-pink-500/5',
-      image: '/project-3.png',
+      image: '/disciplinary-council.png',
       liveUrl: 'https://disciplinary-ai.example.com',
       githubUrl: 'https://github.com/hiba/disciplinary-council-ai',
     },
@@ -111,7 +111,7 @@ export function Projects() {
       ],
       tags: ['Spring Boot', 'Next.js', 'TypeScript', 'PostgreSQL', 'REST API'],
       color: 'from-emerald-500/10 to-green-500/5',
-      image: '/project-4.png',
+      image: '/citeconnect.png',
       liveUrl: 'https://citeconnect.example.com',
       githubUrl: 'https://github.com/hiba/citeconnect',
     },
@@ -177,11 +177,19 @@ export function Projects() {
                 className={`group rounded-xl bg-gradient-to-br ${project.color} border border-border hover:border-accent/40 transition-all duration-300 overflow-hidden flex flex-col`}
               >
                 {/* Image container */}
-                <div className="h-48 w-full overflow-hidden relative border-b border-border/40">
+                <div
+                  className={`h-48 w-full overflow-hidden relative border-b border-border/40 ${
+                    project.id === 1 ? 'bg-white flex items-center justify-center px-4 pt-6 pb-2' : ''
+                  }`}
+                >
                   <img
                     src={project.image}
                     alt={title}
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    className={
+                      project.id === 1
+                        ? 'max-h-full max-w-full w-auto h-auto object-contain object-center translate-y-2 group-hover:scale-[1.03] transition-transform duration-500'
+                        : 'w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500'
+                    }
                   />
                   <div className="absolute top-3 left-3">
                     <span className="text-xs font-semibold px-2.5 py-1 bg-background/90 text-foreground border border-border/50 rounded-full backdrop-blur-sm shadow-sm">

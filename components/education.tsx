@@ -7,7 +7,6 @@ const educationFr = [
   {
     degree: "Deuxième année du cycle d'ingénieur en Ingénierie Logicielle",
     school: "Ecole Nationale Supérieure de l'Intelligence Artificielle et Sciences des Données - Taroudant",
-    field: 'Cycle ingénieur',
     year: '2024 – présent',
     logo: '/education/ensiasd.png',
     logoAlt: 'ENSIASD Taroudant',
@@ -16,16 +15,14 @@ const educationFr = [
   {
     degree: 'DUT en Informatique Décisionnelle et Statistiques',
     school: 'Ecole Supérieure de Technologie - Fkih Ben Salah',
-    field: 'Diplôme Universitaire de Technologie',
     year: '2022 – 2024',
     logo: '/education/est-fkih-ben-salah.png',
     logoAlt: 'EST Fkih Ben Salah',
-    logoClassName: 'h-28 w-auto max-w-[130px] object-contain',
+    logoClassName: 'h-[72px] w-auto max-w-full object-contain scale-[1.55]',
   },
   {
     degree: 'Baccalauréat en Sciences Math B',
     school: 'Lycée Qualifiant Hassan 2 - Sala Al Jadida',
-    field: 'Baccalauréat',
     year: '2020 – 2021',
   },
 ]
@@ -34,7 +31,6 @@ const educationEn = [
   {
     degree: 'Second year — Software Engineering (Engineering cycle)',
     school: 'National Higher School of Artificial Intelligence and Data Science - Taroudant',
-    field: 'Engineering program',
     year: '2024 – present',
     logo: '/education/ensiasd.png',
     logoAlt: 'ENSIASD Taroudant',
@@ -43,16 +39,14 @@ const educationEn = [
   {
     degree: 'University Diploma in Decisional IT and Statistics',
     school: 'Higher School of Technology - Fkih Ben Salah',
-    field: 'DUT',
     year: '2022 – 2024',
     logo: '/education/est-fkih-ben-salah.png',
     logoAlt: 'EST Fkih Ben Salah',
-    logoClassName: 'h-28 w-auto max-w-[130px] object-contain',
+    logoClassName: 'h-[72px] w-auto max-w-full object-contain scale-[1.55]',
   },
   {
     degree: 'Baccalaureate in Math Sciences B',
     school: 'Hassan 2 Qualifying High School - Sala Al Jadida',
-    field: 'Baccalaureate',
     year: '2020 – 2021',
   },
 ]

@@ -1,6 +1,13 @@
 'use client'
 
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+  useSyncExternalStore,
+} from 'react'
 import en from '@/lib/translations/en.json'
 import fr from '@/lib/translations/fr.json'
 
@@ -19,87 +26,115 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined)
 
 const translations = { en, fr }
+const LANGUAGE_KEY = 'language'
+const THEME_KEY = 'theme'
+const DEFAULT_LANGUAGE: Language = 'en'
+const DEFAULT_THEME: 'light' | 'dark' = 'dark'
+
+let languageListeners = new Set<() => void>()
+
+function emitLanguageChange() {
+  languageListeners.forEach((listener) => listener())
+}
+
+function subscribeLanguage(listener: () => void) {
+  languageListeners.add(listener)
+  return () => languageListeners.delete(listener)
+}
+
+function getClientLanguage(): Language {
+  const stored = localStorage.getItem(LANGUAGE_KEY)
+  if (stored === 'en' || stored === 'fr') return stored
+  return navigator.language.startsWith('fr') ? 'fr' : 'en'
+}
+
+function getServerLanguage(): Language {
+  return DEFAULT_LANGUAGE
+}
+
+function getTranslation(language: Language, path: string): string {
+  const keys = path.split('.')
+  let value: unknown = translations[language]
+
+  for (const key of keys) {
+    if (value && typeof value === 'object' && key in value) {
+      value = (value as Record<string, unknown>)[key]
+    } else {
+      return path
+    }
+  }
+
+  return typeof value === 'string' ? value : path
+}
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en')
-  const [theme, setTheme] = useState<'light' | 'dark'>('dark')
+  const language = useSyncExternalStore(
+    subscribeLanguage,
+    getClientLanguage,
+    getServerLanguage,
+  )
+
+  const [theme, setTheme] = useState<'light' | 'dark'>(DEFAULT_THEME)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    // Get language and theme from localStorage or defaults
-    const storedLang = localStorage.getItem('language') as Language | null
-    const storedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null
-    
-    const browserLang = navigator.language.startsWith('fr') ? 'fr' : 'en'
+    const storedTheme = localStorage.getItem(THEME_KEY) as 'light' | 'dark' | null
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
-    const lang = storedLang || browserLang
     const thm = storedTheme || (prefersDark ? 'dark' : 'light')
-    
-    setLanguage(lang)
+
     setTheme(thm)
-    
-    // Apply theme to document
-    if (thm === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-    
+    document.documentElement.classList.toggle('dark', thm === 'dark')
+    document.documentElement.lang = language
     setMounted(true)
+  }, [language])
+
+  const setLanguageDirect = useCallback((lang: Language) => {
+    localStorage.setItem(LANGUAGE_KEY, lang)
+    document.documentElement.lang = lang
+    emitLanguageChange()
   }, [])
 
-  const setLanguageDirect = (lang: Language) => {
-    setLanguage(lang)
-    localStorage.setItem('language', lang)
-  }
-
-  const toggleLanguage = () => {
+  const toggleLanguage = useCallback(() => {
     setLanguageDirect(language === 'en' ? 'fr' : 'en')
-  }
+  }, [language, setLanguageDirect])
 
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-    
-    if (newTheme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }
+  const toggleTheme = useCallback(() => {
+    setTheme((current) => {
+      const newTheme = current === 'dark' ? 'light' : 'dark'
+      localStorage.setItem(THEME_KEY, newTheme)
+      document.documentElement.classList.toggle('dark', newTheme === 'dark')
+      return newTheme
+    })
+  }, [])
 
-  const t = (path: string): string => {
-    const keys = path.split('.')
-    let value: any = translations[language]
-    
-    for (const key of keys) {
-      if (value && typeof value === 'object' && key in value) {
-        value = value[key]
-      } else {
-        return path
-      }
-    }
-    
-    return typeof value === 'string' ? value : path
-  }
-
-  if (!mounted) return <>{children}</>
+  const t = useCallback(
+    (path: string) => getTranslation(language, path),
+    [language],
+  )
 
   return (
-    <AppContext.Provider value={{ language, setLanguage: setLanguageDirect, toggleLanguage, t, theme, toggleTheme, mounted }}>
+    <AppContext.Provider
+      value={{
+        language,
+        setLanguage: setLanguageDirect,
+        toggleLanguage,
+        t,
+        theme,
+        toggleTheme,
+        mounted,
+      }}
+    >
       {children}
     </AppContext.Provider>
   )
 }
 
 const defaultContext: AppContextType = {
-  language: 'en',
+  language: DEFAULT_LANGUAGE,
   setLanguage: () => {},
   toggleLanguage: () => {},
-  t: (path: string) => path,
-  theme: 'dark',
+  t: (path: string) => getTranslation(DEFAULT_LANGUAGE, path),
+  theme: DEFAULT_THEME,
   toggleTheme: () => {},
   mounted: false,
 }
