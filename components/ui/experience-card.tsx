@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { MapPin, CheckCircle2 } from 'lucide-react'
+import { MapPin, CheckCircle2, ExternalLink, Code2 } from 'lucide-react'
 
 interface ExperienceCardProps {
   title: string
@@ -13,6 +13,10 @@ interface ExperienceCardProps {
   logo?: string
   logoAlt?: string
   logoClassName?: string
+  projectUrl?: string
+  projectLinkLabel?: string
+  githubUrl?: string
+  githubLinkLabel?: string
 }
 
 export function ExperienceCard({
@@ -27,6 +31,10 @@ export function ExperienceCard({
   logo,
   logoAlt,
   logoClassName,
+  projectUrl,
+  projectLinkLabel = 'Voir le projet',
+  githubUrl,
+  githubLinkLabel = 'GitHub',
 }: ExperienceCardProps) {
   return (
     <div className="relative">
@@ -86,6 +94,33 @@ export function ExperienceCard({
                 </li>
               ))}
             </ul>
+
+            {(projectUrl || githubUrl) && (
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                {projectUrl && (
+                  <a
+                    href={projectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-sm"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>{projectLinkLabel}</span>
+                  </a>
+                )}
+                {githubUrl && (
+                  <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 text-xs font-medium rounded-lg border border-border hover:bg-muted text-muted-foreground hover:text-foreground transition-all"
+                  >
+                    <Code2 className="w-3.5 h-3.5" />
+                    <span>{githubLinkLabel}</span>
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>

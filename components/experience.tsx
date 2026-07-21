@@ -3,7 +3,21 @@
 import { useApp } from '@/lib/context/AppContext'
 import { ExperienceCard } from './ui/experience-card'
 
-const experiencesFr = [
+type ExperienceItem = {
+  title: string
+  company: string
+  period: string
+  location: string
+  achievements: string[]
+  isCurrent?: boolean
+  logo: string
+  logoAlt: string
+  logoClassName: string
+  projectUrl?: string
+  githubUrl?: string
+}
+
+const experiencesFr: ExperienceItem[] = [
   {
     title: 'Stage',
     company: 'DXC Technology',
@@ -19,6 +33,8 @@ const experiencesFr = [
     logo: '/experience/dxc.png',
     logoAlt: 'DXC Technology',
     logoClassName: 'max-h-[68px] max-w-[125px] w-auto h-auto object-contain',
+    projectUrl: 'http://84.8.216.210',
+    githubUrl: 'https://github.com/HiiiiiBa/SLA_Project',
   },
   {
     title: 'Stage',
@@ -34,6 +50,8 @@ const experiencesFr = [
     logo: '/experience/bc-skills.png',
     logoAlt: 'BC Skills Group',
     logoClassName: 'max-h-[80px] max-w-[110px] w-auto h-auto object-contain',
+    projectUrl: 'https://morocco-2030-risk-analysis.vercel.app/',
+    githubUrl: 'https://github.com/HiiiiiBa/morocco-2030-risk-analysis',
   },
   {
     title: 'Stage',
@@ -65,7 +83,7 @@ const experiencesFr = [
   },
 ]
 
-const experiencesEn = [
+const experiencesEn: ExperienceItem[] = [
   {
     title: 'Internship',
     company: 'DXC Technology',
@@ -81,6 +99,8 @@ const experiencesEn = [
     logo: '/experience/dxc.png',
     logoAlt: 'DXC Technology',
     logoClassName: 'max-h-[68px] max-w-[125px] w-auto h-auto object-contain',
+    projectUrl: 'http://84.8.216.210',
+    githubUrl: 'https://github.com/HiiiiiBa/SLA_Project',
   },
   {
     title: 'Internship',
@@ -96,6 +116,8 @@ const experiencesEn = [
     logo: '/experience/bc-skills.png',
     logoAlt: 'BC Skills Group',
     logoClassName: 'max-h-[80px] max-w-[110px] w-auto h-auto object-contain',
+    projectUrl: 'https://morocco-2030-risk-analysis.vercel.app/',
+    githubUrl: 'https://github.com/HiiiiiBa/morocco-2030-risk-analysis',
   },
   {
     title: 'Internship',
@@ -157,6 +179,12 @@ export function Experience() {
               logo={exp.logo}
               logoAlt={exp.logoAlt}
               logoClassName={exp.logoClassName}
+              projectUrl={exp.projectUrl}
+              projectLinkLabel={
+                language === 'fr' ? 'Voir le projet' : 'View project'
+              }
+              githubUrl={exp.githubUrl}
+              githubLinkLabel="GitHub"
             />
           ))}
         </div>
