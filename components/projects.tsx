@@ -112,8 +112,8 @@ export function Projects() {
       tags: ['Spring Boot', 'Next.js', 'TypeScript', 'PostgreSQL', 'REST API'],
       color: 'from-emerald-500/10 to-green-500/5',
       image: '/citeconnect.png',
-      liveUrl: 'https://citeconnect.example.com',
-      githubUrl: 'https://github.com/hiba/citeconnect',
+      liveUrl: 'https://cite-connect.vercel.app',
+      githubUrl: 'https://github.com/HiiiiiBa/Cite_Connect',
     },
     {
       id: 5,
