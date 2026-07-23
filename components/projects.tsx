@@ -62,8 +62,8 @@ export function Projects() {
       tags: ['Laravel', 'MySQL', 'HTML5', 'CSS3', 'JavaScript', 'MVC'],
       color: 'from-blue-500/10 to-cyan-500/5',
       image: '/academic-website-v2.png',
-      liveUrl: 'https://academic-platform.example.com',
-      githubUrl: 'https://github.com/hiba/academic-website',
+      liveUrl: 'https://academic-website-web.onrender.com/',
+      githubUrl: 'https://github.com/HiiiiiBa/Academic-Website',
     },
     {
       id: 3,

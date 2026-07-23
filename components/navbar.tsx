@@ -45,17 +45,14 @@ export function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <button
           onClick={() => scrollToSection('hero')}
-          className="shrink-0 flex items-center hover:opacity-70 transition-opacity"
+          className="shrink-0 flex items-center hover:opacity-80 transition-opacity"
           aria-label="Retour à l'accueil"
         >
-          <span
-            style={{ fontFamily: 'var(--font-cormorant), Georgia, serif' }}
-            className="text-foreground tracking-tight select-none"
-          >
-            <span className="text-3xl font-light">Hiba</span>
-            <span className="text-3xl font-light italic" style={{ fontStyle: 'italic' }}>El</span>
-            <span className="text-3xl font-light">Ouafi</span>
-          </span>
+          <img
+            src="/logo-hiba.png"
+            alt="Hiba El Ouafi"
+            className="h-10 sm:h-12 w-auto object-contain select-none dark:brightness-0 dark:invert"
+          />
         </button>
 
         <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
