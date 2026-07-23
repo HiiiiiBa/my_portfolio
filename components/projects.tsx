@@ -39,8 +39,6 @@ export function Projects() {
       tags: ['Python', 'CNN/LSTM', 'SVM/KNN', 'Word2Vec', 'TF-IDF', 'Streamlit'],
       color: 'from-violet-500/10 to-purple-500/5',
       image: '/sms-classification.png',
-      liveUrl: 'https://sms-classifier.example.com',
-      githubUrl: 'https://github.com/hiba/sms-spam-classifier',
     },
     {
       id: 2,
@@ -87,8 +85,6 @@ export function Projects() {
       tags: ['Next.js', 'FastAPI', 'CamemBERT', 'PostgreSQL', 'React', 'NLP'],
       color: 'from-rose-500/10 to-pink-500/5',
       image: '/disciplinary-council.png',
-      liveUrl: 'https://disciplinary-ai.example.com',
-      githubUrl: 'https://github.com/hiba/disciplinary-council-ai',
     },
     {
       id: 4,
@@ -139,8 +135,6 @@ export function Projects() {
       tags: ['FastAPI', 'Redis', 'AWS', 'Python', 'REST API', 'Docker'],
       color: 'from-amber-500/10 to-orange-500/5',
       image: '/project-5.png',
-      liveUrl: 'https://rate-limiter.example.com',
-      githubUrl: 'https://github.com/hiba/api-rate-limiter',
     },
   ]
 
@@ -227,29 +221,30 @@ export function Projects() {
                     ))}
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-2.5 pt-4">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-sm cursor-pointer"
-                      >
-                        <span>{t('projects.viewProject')}</span>
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg border border-border hover:bg-muted text-muted-foreground hover:text-foreground transition-all cursor-pointer"
-                      >
-                        <span>{t('projects.github') || 'GitHub'}</span>
-                      </a>
-                    )}
-                  </div>
+                  {(project.liveUrl || project.githubUrl) && (
+                    <div className="flex gap-2.5 pt-4">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg bg-foreground text-background hover:bg-foreground/90 transition-all shadow-sm cursor-pointer"
+                        >
+                          <span>{t('projects.viewProject')}</span>
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg border border-border hover:bg-muted text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+                        >
+                          <span>{t('projects.github') || 'GitHub'}</span>
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             )
