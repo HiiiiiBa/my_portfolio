@@ -1,26 +1,28 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Cormorant_Garamond } from 'next/font/google'
+import { Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { AppProvider } from '@/lib/context/AppContext'
 
-const cormorant = Cormorant_Garamond({
-  variable: '--font-cormorant',
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-space-grotesk',
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
 })
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
-  title: 'Hiba El Ouafi',
-  description: 'Portfolio de Hiba El Ouafi – Développeuse full-stack passionnée par la création d\'applications web modernes et performantes.',
-  generator: 'v0.app',
+  title: 'Hiba El Ouafi — Full-Stack Developer',
+  description: 'Portfolio de Hiba El Ouafi – Développeuse full-stack passionnée par la création d\'applications web modernes, performantes et dopées à l\'IA.',
+  generator: 'Next.js',
+  keywords: ['Full-Stack Developer', 'React', 'Next.js', 'FastAPI', 'Portfolio', 'Hiba El Ouafi'],
   icons: {
     icon: [
       {
@@ -46,7 +48,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased transition-colors duration-300">
         <AppProvider>
           {children}

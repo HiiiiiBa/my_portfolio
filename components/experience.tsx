@@ -2,6 +2,7 @@
 
 import { useApp } from '@/lib/context/AppContext'
 import { ExperienceCard } from './ui/experience-card'
+import { SectionHeader } from './ui/section-header'
 
 type ExperienceItem = {
   title: string
@@ -29,7 +30,6 @@ const experiencesFr: ExperienceItem[] = [
       'Intégration d’IA via Google Gemini : assistant conversationnel, analyse d’incidents et génération de rapports exécutifs',
       'Stack technique : Next.js, Spring Boot, PostgreSQL, WebSocket ; démarche DevOps (Docker, CI/CD, déploiement cloud et observabilité)',
     ],
-    isCurrent: true,
     logo: '/experience/dxc.png',
     logoAlt: 'DXC Technology',
     logoClassName: 'max-h-[68px] max-w-[125px] w-auto h-auto object-contain',
@@ -95,7 +95,6 @@ const experiencesEn: ExperienceItem[] = [
       'AI integration via Google Gemini: conversational assistant, incident analysis, and executive report generation',
       'Tech stack: Next.js, Spring Boot, PostgreSQL, WebSocket; DevOps approach (Docker, CI/CD, cloud deployment, and observability)',
     ],
-    isCurrent: true,
     logo: '/experience/dxc.png',
     logoAlt: 'DXC Technology',
     logoClassName: 'max-h-[68px] max-w-[125px] w-auto h-auto object-contain',
@@ -154,18 +153,34 @@ export function Experience() {
   const experiences = language === 'fr' ? experiencesFr : experiencesEn
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 border-t border-border/50">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-            {t('experience.title')}
-          </h2>
-          <p className="text-muted-foreground">
-            {t('experience.subtitle')}
-          </p>
-        </div>
+    <section id="experience" className="py-24 px-4 sm:px-6 relative overflow-hidden bg-background text-foreground">
+      {/* Background */}
+      <div className="absolute inset-0 bg-mesh pointer-events-none" />
+      <div
+        className="absolute top-0 left-0 right-0 h-px pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, transparent, rgba(6,182,212,0.5), rgba(139,92,246,0.5), transparent)',
+        }}
+      />
 
-        <div className="relative border-l border-border ml-1.5">
+      <div className="max-w-4xl mx-auto relative z-10">
+        <SectionHeader
+          badge="Career"
+          badgeClassName=""
+          badgeStyle={{
+            color: '#06b6d4',
+            background: 'rgba(6, 182, 212, 0.12)',
+            border: '1px solid rgba(6, 182, 212, 0.25)',
+          }}
+          title={t('experience.title')}
+          subtitle={t('experience.subtitle')}
+        />
+
+        {/* Timeline */}
+        <div className="relative ml-1.5 timeline-border-mask">
+          <div
+            className="absolute top-0 left-0 bottom-0 w-0.5 timeline-line -ml-px"
+          />
           {experiences.map((exp, idx) => (
             <ExperienceCard
               key={idx}

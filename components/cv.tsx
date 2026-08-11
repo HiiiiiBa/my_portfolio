@@ -2,6 +2,7 @@
 
 import { FileDown, Eye } from 'lucide-react'
 import { useApp } from '@/lib/context/AppContext'
+import { SectionHeader } from './ui/section-header'
 
 const CV_PATH = '/cv/hiba-el-ouafi-cv.pdf'
 const CV_FILENAME = 'Hiba EL OUAFI CV.pdf'
@@ -33,14 +34,11 @@ export function CV() {
   return (
     <section id="cv" className="py-20 px-4 sm:px-6 border-t border-border/50">
       <div className="max-w-4xl mx-auto">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-            {t('cv.title')}
-          </h2>
-          <p className="text-muted-foreground">
-            {t('cv.subtitle')}
-          </p>
-        </div>
+        <SectionHeader
+          className="!mb-12"
+          title={t('cv.title')}
+          subtitle={t('cv.subtitle')}
+        />
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="rounded-xl bg-card border border-border hover:border-accent/40 p-6 transition-colors">
