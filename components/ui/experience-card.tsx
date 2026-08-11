@@ -1,13 +1,18 @@
 import Image from 'next/image'
-import { MapPin, CheckCircle2, ExternalLink, Code2 } from 'lucide-react'
+import { MapPin, CheckCircle2, ExternalLink, Code2, Wifi } from 'lucide-react'
+
+import { TAG_STYLES, DEFAULT_TAG_STYLE } from '@/lib/tag-styles'
 
 interface ExperienceCardProps {
   title: string
   company: string
   period: string
   location: string
+  isRemote?: boolean
+  remoteLabel?: string
   description?: string
   achievements: string[]
+  tags?: string[]
   isCurrent?: boolean
   currentLabel?: string
   logo?: string
@@ -24,8 +29,11 @@ export function ExperienceCard({
   company,
   period,
   location,
+  isRemote,
+  remoteLabel = 'À distance',
   description,
   achievements,
+  tags,
   isCurrent,
   currentLabel = 'En cours',
   logo,
@@ -68,7 +76,7 @@ export function ExperienceCard({
                 <h3 className="font-bold text-lg leading-snug text-foreground">
                   {company}
                 </h3>
-                <p className="text-sm font-semibold mt-0.5 text-accent">
+                <p className="text-sm font-semibold mt-0.5 text-accent leading-snug">
                   {title}
                 </p>
               </div>
@@ -80,14 +88,20 @@ export function ExperienceCard({
             </div>
 
             {/* Meta */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-medium mb-4 text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-2 text-xs font-medium mb-4">
               <span className="px-2.5 py-0.5 rounded-full bg-accent/10 text-accent border border-accent/20">
                 {period}
               </span>
-              <span className="inline-flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5" />
+              <span className="inline-flex items-center gap-1 text-muted-foreground">
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
                 {location}
               </span>
+              {isRemote && (
+                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-violet-500/10 text-violet-700 dark:text-violet-300 border border-violet-500/25 font-semibold">
+                  <Wifi className="w-3.5 h-3.5 shrink-0" />
+                  {remoteLabel}
+                </span>
+              )}
             </div>
 
             {description && (
@@ -105,6 +119,21 @@ export function ExperienceCard({
                 </li>
               ))}
             </ul>
+
+            {tags && tags.length > 0 && (
+              <div className="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-border/60">
+                {tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`px-2 py-0.5 text-[10px] font-bold rounded-full border ${
+                      TAG_STYLES[tag] ?? DEFAULT_TAG_STYLE
+                    }`}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {/* Links */}
             {(projectUrl || githubUrl) && (

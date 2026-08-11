@@ -9,18 +9,20 @@ type ExperienceItem = {
   company: string
   period: string
   location: string
+  isRemote?: boolean
   achievements: string[]
+  tags?: string[]
   isCurrent?: boolean
-  logo: string
-  logoAlt: string
-  logoClassName: string
+  logo?: string
+  logoAlt?: string
+  logoClassName?: string
   projectUrl?: string
   githubUrl?: string
 }
 
 const experiencesFr: ExperienceItem[] = [
   {
-    title: 'Stage',
+    title: 'Stagiaire Ingénieure Logicielle — Développement Full-Stack & DevOps',
     company: 'DXC Technology',
     period: '06/2026 – 08/2026',
     location: 'Rabat, Maroc',
@@ -28,8 +30,8 @@ const experiencesFr: ExperienceItem[] = [
       'Conception et développement de SLA Monitor, plateforme web intelligente de gestion et supervision des accords de niveau de service (SLA)',
       'Suivi temps réel de la conformité SLA, gestion des incidents, alertes et rapports, avec contrôle d’accès selon 4 rôles (Administrateur, Manager, Employé, Client)',
       'Intégration d’IA via Google Gemini : assistant conversationnel, analyse d’incidents et génération de rapports exécutifs',
-      'Stack technique : Next.js, Spring Boot, PostgreSQL, WebSocket ; démarche DevOps (Docker, CI/CD, déploiement cloud et observabilité)',
     ],
+    tags: ['Next.js', 'Spring Boot', 'PostgreSQL', 'WebSocket', 'Docker', 'CI/CD'],
     logo: '/experience/dxc.png',
     logoAlt: 'DXC Technology',
     logoClassName: 'max-h-[68px] max-w-[125px] w-auto h-auto object-contain',
@@ -37,7 +39,24 @@ const experiencesFr: ExperienceItem[] = [
     githubUrl: 'https://github.com/HiiiiiBa/SLA_Project',
   },
   {
-    title: 'Stage',
+    title: 'Stagiaire Ingénieure Logicielle — Développement Full-Stack CRM & Téléphonie',
+    company: '3LM Solutions',
+    period: '07/2026 – en cours',
+    location: 'Bizerte, Tunisie',
+    isRemote: true,
+    isCurrent: true,
+    logo: '/experience/3lm-solutions.png',
+    logoAlt: '3LM Solutions',
+    logoClassName: 'max-h-[96px] max-w-[150px] w-auto h-auto object-contain scale-125',
+    achievements: [
+      'Conception et développement d’une plateforme CRM Cloud & téléphonie centralisant contacts, appels, SMS, opportunités commerciales et gestion d’équipe',
+      'Développement d’un pipeline commercial Kanban, d’un dialer avec click-to-call, d’un historique des appels et d’un tableau de bord analytique',
+      'Mise en place de l’authentification JWT, de la gestion des rôles (Agent, Manager, Admin) et du contrôle des accès côté serveur',
+    ],
+    tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'Recharts'],
+  },
+  {
+    title: 'Stagiaire Ingénieure Logicielle — Développement Web & Intelligence Artificielle',
     company: 'BC Skills Group',
     period: '07/2025 – 09/2025',
     location: 'Rabat, Maroc',
@@ -54,7 +73,7 @@ const experiencesFr: ExperienceItem[] = [
     githubUrl: 'https://github.com/HiiiiiBa/morocco-2030-risk-analysis',
   },
   {
-    title: 'Stage',
+    title: 'Stagiaire BI & Data — Business Intelligence et Data Analytics',
     company: 'Econocom Maroc',
     period: '04/2024 – 07/2024',
     location: 'Rabat, Maroc',
@@ -69,7 +88,7 @@ const experiencesFr: ExperienceItem[] = [
     logoClassName: 'max-h-[56px] max-w-[160px] w-auto h-auto object-contain',
   },
   {
-    title: 'Stage',
+    title: 'Stagiaire Développeuse Web — E-Commerce & SEO',
     company: 'Créative X Growth',
     period: '07/2023 – 08/2023',
     location: 'Rabat, Maroc',
@@ -85,7 +104,7 @@ const experiencesFr: ExperienceItem[] = [
 
 const experiencesEn: ExperienceItem[] = [
   {
-    title: 'Internship',
+    title: 'Software Engineering Intern — Full-Stack & DevOps Development',
     company: 'DXC Technology',
     period: '06/2026 – 08/2026',
     location: 'Rabat, Maroc',
@@ -93,8 +112,8 @@ const experiencesEn: ExperienceItem[] = [
       'Design and development of SLA Monitor, an intelligent web platform for SLA management and monitoring',
       'Real-time SLA compliance tracking, incident/alert/report management, with role-based access control (Admin, Manager, Employee, Client)',
       'AI integration via Google Gemini: conversational assistant, incident analysis, and executive report generation',
-      'Tech stack: Next.js, Spring Boot, PostgreSQL, WebSocket; DevOps approach (Docker, CI/CD, cloud deployment, and observability)',
     ],
+    tags: ['Next.js', 'Spring Boot', 'PostgreSQL', 'WebSocket', 'Docker', 'CI/CD'],
     logo: '/experience/dxc.png',
     logoAlt: 'DXC Technology',
     logoClassName: 'max-h-[68px] max-w-[125px] w-auto h-auto object-contain',
@@ -102,7 +121,24 @@ const experiencesEn: ExperienceItem[] = [
     githubUrl: 'https://github.com/HiiiiiBa/SLA_Project',
   },
   {
-    title: 'Internship',
+    title: 'Software Engineering Intern — Full-Stack CRM & Telephony Development',
+    company: '3LM Solutions',
+    period: '07/2026 – present',
+    location: 'Bizerte, Tunisia',
+    isRemote: true,
+    isCurrent: true,
+    logo: '/experience/3lm-solutions.png',
+    logoAlt: '3LM Solutions',
+    logoClassName: 'max-h-[96px] max-w-[150px] w-auto h-auto object-contain scale-125',
+    achievements: [
+      'Design and development of a Cloud CRM & telephony platform centralizing contacts, calls, SMS, sales opportunities and team management',
+      'Development of a Kanban sales pipeline, a click-to-call dialer, call history and an analytics dashboard',
+      'Implementation of JWT authentication, role management (Agent, Manager, Admin) and server-side access control',
+    ],
+    tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'JWT', 'Recharts'],
+  },
+  {
+    title: 'Software Engineering Intern — Web Development & Artificial Intelligence',
     company: 'BC Skills Group',
     period: '07/2025 – 09/2025',
     location: 'Rabat, Maroc',
@@ -119,7 +155,7 @@ const experiencesEn: ExperienceItem[] = [
     githubUrl: 'https://github.com/HiiiiiBa/morocco-2030-risk-analysis',
   },
   {
-    title: 'Internship',
+    title: 'BI & Data Intern — Business Intelligence and Data Analytics',
     company: 'Econocom Morocco',
     period: '04/2024 – 07/2024',
     location: 'Rabat, Maroc',
@@ -134,7 +170,7 @@ const experiencesEn: ExperienceItem[] = [
     logoClassName: 'max-h-[56px] max-w-[160px] w-auto h-auto object-contain',
   },
   {
-    title: 'Internship',
+    title: 'Web Developer Intern — E-Commerce & SEO',
     company: 'Créative X Growth',
     period: '07/2023 – 08/2023',
     location: 'Rabat, Maroc',
@@ -188,7 +224,10 @@ export function Experience() {
               company={exp.company}
               period={exp.period}
               location={exp.location}
+              isRemote={exp.isRemote}
+              remoteLabel={language === 'fr' ? 'À distance' : 'Remote'}
               achievements={exp.achievements}
+              tags={exp.tags}
               isCurrent={exp.isCurrent}
               currentLabel={language === 'fr' ? 'En cours' : 'Current'}
               logo={exp.logo}

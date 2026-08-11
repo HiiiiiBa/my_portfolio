@@ -1,0 +1,25 @@
+export const TAG_STYLES: Record<string, string> = {
+  Python: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+  'Next.js': 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
+  FastAPI: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+  PostgreSQL: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20',
+  React: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+  Laravel: 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20',
+  Redis: 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
+  AWS: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+  Docker: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+  NLP: 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
+  'Spring Boot': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+  TypeScript: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+  Vite: 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
+  'Tailwind CSS': 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+  'Node.js': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+  Express: 'bg-muted text-foreground/80 border-border',
+  Prisma: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20',
+  JWT: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+  Recharts: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20',
+  WebSocket: 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
+  'CI/CD': 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
+}
+
+export const DEFAULT_TAG_STYLE = 'bg-accent/10 text-accent border-accent/20'

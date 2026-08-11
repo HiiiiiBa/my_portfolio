@@ -3,6 +3,7 @@
 import { useApp } from '@/lib/context/AppContext'
 import { ExternalLink, Code2, Sparkles } from 'lucide-react'
 import { SectionHeader } from './ui/section-header'
+import { TAG_STYLES, DEFAULT_TAG_STYLE } from '@/lib/tag-styles'
 
 interface Project {
   id: number
@@ -15,20 +16,6 @@ interface Project {
   image: string
   liveUrl?: string
   githubUrl?: string
-}
-
-const TAG_STYLES: Record<string, string> = {
-  'Python':     'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
-  'Next.js':    'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
-  'FastAPI':    'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
-  'PostgreSQL': 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20',
-  'React':      'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
-  'Laravel':    'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20',
-  'Redis':      'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
-  'AWS':        'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
-  'Docker':     'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
-  'NLP':        'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
-  'Spring Boot':'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
 }
 
 export function Projects() {
@@ -205,7 +192,7 @@ export function Projects() {
                       <span
                         key={tag}
                         className={`px-2 py-0.5 text-[10px] font-bold rounded-full border ${
-                          TAG_STYLES[tag] ?? 'bg-accent/10 text-accent border-accent/20'
+                          TAG_STYLES[tag] ?? DEFAULT_TAG_STYLE
                         }`}
                       >
                         {tag}

@@ -84,11 +84,37 @@ function useTypewriter(words: string[], speed = 80, pause = 2000) {
   return display
 }
 
-export function Hero() {
-  const { t } = useApp()
-
-  const words = ['Full-Stack Developer', 'AI Engineer', 'Problem Solver', 'Tech Enthusiast']
+function HeroTypewriter({ words }: { words: string[] }) {
   const typed = useTypewriter(words)
+
+  return (
+    <div className="flex items-center justify-center gap-3 min-h-10">
+      <Code2 className="w-5 h-5 shrink-0 text-cyan-500" />
+      <p className="text-xl sm:text-2xl font-semibold font-mono text-cyan-500 dark:text-cyan-400">
+        {typed}
+        <span className="inline-block w-0.5 h-6 ml-1 align-middle bg-accent animate-pulse" />
+      </p>
+    </div>
+  )
+}
+
+export function Hero() {
+  const { t, language } = useApp()
+
+  const words =
+    language === 'fr'
+      ? [
+          'Ingénieure logicielle',
+          'Développeuse Full-Stack',
+          'Passionnée QA & tests logiciels',
+          'Passionnée DevOps & Cloud',
+        ]
+      : [
+          'Software Engineer',
+          'Full-Stack Developer',
+          'QA & Software Testing Enthusiast',
+          'DevOps & Cloud Enthusiast',
+        ]
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -118,13 +144,7 @@ export function Hero() {
             </div>
 
             {/* Typewriter */}
-            <div className="flex items-center justify-center gap-3 h-10">
-              <Code2 className="w-5 h-5 shrink-0 text-cyan-500" />
-              <p className="text-xl sm:text-2xl font-semibold font-mono text-cyan-500 dark:text-cyan-400">
-                {typed}
-                <span className="inline-block w-0.5 h-6 ml-1 align-middle bg-accent animate-pulse" />
-              </p>
-            </div>
+            <HeroTypewriter key={language} words={words} />
 
             {/* Description */}
             <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
